@@ -6,10 +6,10 @@ async function recupApi() {
     console.log(recuperation.results)
     
     let affichageAPI = document.querySelector('h1')
-      for(let i=0; i< results.lenght; i++ ){
+    for(let i=0; i< results.lenght; i++ ){
     console.log(results[i])
     affichageAPI.innerHTML += `<h1>${results[i].name}</h1>`
 
-      }
+    }
 }
 recupApi()
