@@ -1,3 +1,10 @@
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
 h1 {
     text-align: center;
     color: #FFCC00;
@@ -10,8 +17,8 @@ h1 {
 
 aside {
     float: left;
-    height: max-content;
-    padding-bottom: 1000px;
+    height: 100%;
+    
     border: solid;
 }
 

@@ -1,7 +1,7 @@
 async function recupApi() { 
     const reponse = await fetch("https://api.pokemontcg.io/v2/cards")
     const recuperation = await reponse.json();
-    console.log(recuperation)
+    
 
     const affichage = document.querySelector('h1')
 
