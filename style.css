@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    color: #FFCC00; /* Couleur intérieure (jaune vif) */
+    -webkit-text-stroke: 5px #003A70; /* Contour bleu foncé */
+    font-family: "Bangers" ,sans-serif;
+    font-size: 100px;
+}
+
+aside {
+    float: left;
+    height: max-content;
+}
+
+#navbar {
+    border: solid;
+}
