@@ -1,3 +1,7 @@
+html{
+    height: 100%;
+}
+
 h1 {
     text-align: center;
     color: #FFCC00;
@@ -56,5 +60,25 @@ aside {
     grid-area: foot;
     border: solid;
     
+
+}
+
+/* Image de la loupe */
+.search-bar button {
+    width: 1px;
+    height: 1px;
+    
+    
+}
+
+img {
+
+   width: 15px; 
+   height : 15px;
+   
+}
+
+#live-output {
+ color:blue
 
 }
