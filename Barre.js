@@ -16,8 +16,9 @@ document.getElementById('import').onclick = function () {
       .then(data => {
         // Recuperer les noms de Pokemon 
         for(let i=0; i < data.data.length; i++){
-            let affichageImage = document.querySelector('main')
+            let affichageImage = document.getElementsByClassName('Affichage-Image')
             let names = [data.data[i].name]
+            let images = data.data[i].images.small
            console.log(names[0])
             // console.log("Voila" + searchBar.value)
               // Afficher les dans l'élément avec le main
@@ -27,17 +28,20 @@ document.getElementById('import').onclick = function () {
                 console.log("false")
               } else {
               console.log("true") 
-               document.querySelector('main').innerHTML += names[0];
-               if (data.data[i].images && data.data[i].images.small) {
-                affichageImage.innerHTML += `<img src="${images}" alt="${images}">`;
+              document.querySelector('main').innerHTML += names[0];
+              affichageImage.innerHTML += `<img src="${images}" alt="${images}">`
+              return names[0]
+
+            }
+               
+               /*if (data.data[i].images && data.data[i].images.small) {
+              
             } else {
                 affichageImage.innerHTML += `<img>Image non disponible</img>`;
+            }*/ 
+              
             }
-               return names[0]
-
-              }
-            }
-            return 
+            
       })
       .catch(error => console.error('Erreur lors de la requête :', error));
   }; 
