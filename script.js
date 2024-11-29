@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 async function recupApi() {
   const reponse = await fetch("https://tyradex.vercel.app/api/v1/types");
   const recuperation = await reponse.json();
@@ -34,6 +35,29 @@ async function recupApi() {
 
     })
   }
+=======
+    const affichage = document.querySelector('main')
+
+    for(let i=0; i< recuperation.data.length; i++ ) {
+    affichage.innerHTML += `<main>${recuperation.data[i].name}</main>`
+    console.log(recuperation.data[i].name)
+    // affichage.innerHTML += `<p>"type"${recuperation.data[i].types}</p>`
+
+        if (recuperation.data[i].images && recuperation.data[i].images.small) {
+            affichage.innerHTML += `<img src="${recuperation.data[i].images.small}" alt="${recuperation.data[i].name}">`;
+        } else {
+            affichage.innerHTML += `<p>Image non disponible</p>`;
+        }
+    
+    // Vérifie si abilities existe et contient au moins un élément
+        if (recuperation.data[i].abilities && recuperation.data[i].abilities.length > 0) {
+           //  affichage.innerHTML += `<p>"talent"${recuperation.data[i].abilities[0].name}</p>`;
+        } else {
+            affichage.innerHTML += ``;
+        }
+       // affichage.innerHTML += `<p>"serie"${recuperation.data[i].set.series}</p>`
+    }
+>>>>>>> a54a86b (creation Barre.js)
 }
 recupApi()
 
