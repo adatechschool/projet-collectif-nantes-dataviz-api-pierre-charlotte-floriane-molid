@@ -117,6 +117,7 @@ aside {
 
 }
 
+
 #Dragon:hover {
     background-color: #562EC6;
 }
@@ -263,6 +264,27 @@ aside {
 
 #listingPokemon{
 list-style-type:  none;
+
+}
+
+
+/* Image de la loupe */
+.search-bar button {
+    width: 1px;
+    height: 1px;
+    
+    
+}
+
+img {
+
+   width: 15px; 
+   height : 15px;
+   
+}
+
+#live-output {
+ color:blue
 
 }
 
