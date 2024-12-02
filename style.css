@@ -1,66 +1,267 @@
-html{
+html,body,main {
     height: 100%;
 }
 
-body{
-    height: 100%;
-}
+
+
+
 h1 {
     text-align: center;
     color: #FFCC00;
-    /* Couleur intérieure (jaune vif) */
     -webkit-text-stroke: 5px #003A70;
-    /* Contour bleu foncé */
     font-family: "Bangers", sans-serif;
     font-size: 100px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px; /* Ajout d'une marge pour espacer le titre de la Pokéball */
+    transition: color 0.3s ease, transform 0.3s ease;
+
+}
+
+h1:hover {
+
+    color: #FFCC00;
+    -webkit-text-stroke: 5px #003A70;
+    transform: scale(1.1);
+    /* Agrandit légèrement le texte au survol */
+}
+
+
+
+p {
+
+    color: black;
+    font-size: 20px;
+
 }
 
 aside {
     float: left;
     height: 100%;
-    
-    border: solid;
+    border-right: solid;
+    border-top: solid;
 }
 
-/* #navbar {
-   
-} */
 
 
 .structure {
     display: grid;
     width: 100%;
-    height: 1000px;
+    height: 100%;
     grid-template-areas:
         "head head"
         "aside main"
         "aside foot";
     grid-template-rows: 200px 1fr 30px;
-    grid-template-columns: 250px 5fr;
+    grid-template-columns: 200px 5fr;
 }
 
 .structure>header {
     grid-area: head;
-    border: solid;
-    
+    /* border: solid; */
+
 }
 
 .structure>aside {
     grid-area: aside;
-    background-color: rgba(255, 0, 0, 0.793);
-    
+
 }
 
 .structure>main {
     grid-area: main;
-    border: solid;
+    border-top: solid;
+
+}
+
+.type-button{
+    display: grid;
+    width: 175px;
+    flex-wrap: wrap;
+    align-items: center; /* Centre les boutons verticalement */
+    justify-content: center; /* Centre horizontalement */
+    gap: 15px; /* Espace entre les boutons */
+    padding: 50px; /* Optionnel, pour ajouter un espace autour du conteneur */
+    color: black;
+    padding: 5px 55px; /* Espacement intérieur */
+    border: none; /* Pas de bordure */
+    border-radius: 100px; /* Coins arrondis */
+    font-size: 20px; /* Taille du texte */
+    cursor: pointer; /* Changement du curseur au survol */
+    transition: background-color 0.3s ease; /* Effet de transition */
+    margin: 15px;
+    
     
 }
 
-.structure>footer {
-
-    grid-area: foot;
-    border: solid;
+#Acier {
     
+    background-color: #B8B8D0; /* Beige/gris clair */
+    
+}
+
+
+#Acier:hover {
+    background-color: #9C9CB0;
+}
+
+#Combat {
+    background-color: #C03028;
+}
+
+#Combat:hover {
+    background-color: #9E2521;
+}
+
+#Dragon {
+    background-color: #7038F8;
 
 }
+
+#Dragon:hover {
+    background-color: #562EC6;
+}
+
+
+#Eau {
+    background-color: #6890F0;
+}
+
+#Eau:hover {
+    background-color: #5072C0;
+}
+
+
+
+#Électrik {
+    background-color: #F8D030;
+  
+}
+
+#Électrik:hover {
+    background-color: #D4B424;
+}
+
+
+#Fée {
+    background-color: #EE99AC;
+  
+}
+
+#Fée:hover {
+    background-color: #C17F89;
+}
+
+#Feu {
+    background-color: #F08030;
+    
+}
+
+#Feu:hover {
+    background-color: #C06724;
+}
+
+#Glace {
+    background-color: #98D8D8;
+  
+}
+
+#Glace:hover {
+    background-color: #7AB0B0;
+}
+
+#Insecte {
+    background-color: #A8B820;
+    
+}
+
+#Insecte:hover {
+    background-color: #8A941A;
+}
+
+
+#Normal {
+    background-color: #A8A878;
+ 
+}
+
+#Normal:hover {
+    background-color: #8C8C68;
+}
+
+
+#Plante {
+    background-color: #78C850;
+   
+}
+
+#Plante:hover {
+    background-color: #609A3E;
+}
+
+#Poison {
+    background-color: #A040A0;
+    
+}
+
+#Poison:hover {
+    background-color: #823683
+}
+
+#Psy {
+    background-color: #F85888;
+   
+}
+
+#Psy:hover {
+    background-color: #C4466E;
+}
+
+#Roche {
+    background-color: #B8A038;
+  
+}
+
+#Roche:hover {
+    background-color: #96822E
+}
+
+#Sol {
+    background-color: #E0C068;
+  
+}
+
+#Sol:hover {
+    background-color: #BFA754
+}
+
+#Spectre {
+    background-color: #705898;
+  
+}
+
+#Spectre:hover {
+    background-color: #584879
+}
+
+#Ténèbres {
+    background-color: #705848;
+
+}
+
+#Ténèbres:hover {
+    background-color: #584137
+}
+
+#Vol {
+    background-color: #A890F0;
+    
+}
+
+#Vol:hover {
+    background-color: #8976C0
+}
+
+#listingPokemon{
+list-style-type:  none;
+
+}
+
