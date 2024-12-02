@@ -3,47 +3,37 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
     <title>PokeWorld</title>
-
   </head>
 
   <body>
+    <img src="assets/nuages.jpg" alt="Nuages" class="background-image">
+
     <div class="structure">
-
       <header>
-        <h1>PokeWorld</h1>
-        <div id=containerAnimation></div>
-
-        <div class="pokeball">
-          <div class="top"></div>
-          <div class="bottom"></div>
-          <div class="button"></div>
-        </div>
-        
+        <img id="titre" src="https://fontmeme.com/permalink/241202/b024750a90e0e12d27400ebb806da480.png" alt="effet-dombre" border="0">
+        <div id="containerAnimation"></div>
       </header>
 
       <main>
-        
-
-        <div id=listingPokemon></div>
-        <div id=type-liste-container></div>
-
+        <div class="container">
+          <div class="pokeball pokeball-animated"></div>
+        </div>
+        <div id="listingPokemon"></div>
+        <div id="type-liste-container"></div>
       </main>
 
       <aside>
         <nav id="navbar">
-          <div id=type-container></div>
+          <div id="type-container"></div>
         </nav>
       </aside>
 
       <footer></footer>
-
     </div>
 
     <script src="script.js"></script>
-
   </body>
-
 </html>
