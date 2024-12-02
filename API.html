@@ -7,7 +7,8 @@
     <title>PokeWorld</title>
 
 
-     <script src="script.js"></script> 
+    <!--<script src="script.js"></script> --> 
+   
      
 
     <link rel="stylesheet" href="style.css">
@@ -31,40 +32,49 @@
         
       </header>
 
-      <main>
-
-        
-
-        <div id=listingPokemon></div>
-        <div id=type-liste-container></div>
-
-
+      <main>  
 <fieldset>
-  <button> <input id="import"><img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Loupe"/></button>
-    
-</fieldset>
-  <div class="Affichage-Image">
-    <img>
+  <select class ="listing" id="referrer" name="referrer">
+    <option value=""></option>
+    <option value="1"></option>
+    <option value="2"></option>
+    <option value="3"></option>
+    <option value="4">Other</option>
+  </select>
+  <div class="search-container">
+    <input type="text" id="search-bar" placeholder="Rechercher..." />
+    <button id="search-button">🔍</button>
   </div>
+  <p id="output-text"><span id="live-output"></span></p>
+ 
+</fieldset>
+
+
+<div id=listingPokemon></div>
+
+<div id="DetailsConteneur"></div>
+<div id="details"></div>
+<div id="image"></div>
+<div id ="ListingPokemon"></div>
+
+
+
 
 </main>
 
-      <aside>
-       
-          <div id=type-container></div>
-      
+<aside>
+  <div id=type-container></div>
+                
 </aside>
-        <div id ="ListingPokemon"></div>
-        <div id="image"></div>
-      </main>
+       
 
       <footer></footer>
 
     </div>
-    <script src="script.js"></script>
+      <!--<script src="script.js"></script> --> 
 
 
-
+    <script src="Barre.js"></script>
   </body>
 
 

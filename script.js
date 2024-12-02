@@ -16,7 +16,8 @@ async function recupApi() {
       type.addEventListener("click", async () => {
           const reponse2 = await fetch(`https://tyradex.vercel.app/api/v1/types/${recuperation[i].name.fr}`)
           const recuperation2 = await reponse2.json() 
-          console.log(recuperation2)
+          // console.log(recuperation2)
+          console.log(recuperation2.pokemons[i].pokedex_id)
           const balise2 = document.getElementById('type-liste-container')
           balise2.innerHTML = "" // on vide
     
@@ -28,9 +29,11 @@ async function recupApi() {
             // Créer un élément de grille pour chaque Pokémon
             const pokemonGridItem = document.createElement('div');
             pokemonGridItem.classList.add('pokemon-grid-item');
-    
+           // Id du Pokemon 
+           let identifiant = document.createElement('button')
+
             // Nom du Pokémon
-            const nomPokemon = document.createElement('h3');
+            let nomPokemon = document.createElement('div');
             nomPokemon.textContent = recuperation2.pokemons[i].name.fr;
     
             // Image du Pokémon
@@ -41,15 +44,58 @@ async function recupApi() {
             // Ajouter le nom et l'image à l'élément de grille
             pokemonGridItem.appendChild(nomPokemon);
             pokemonGridItem.appendChild(img);
+            pokemonGridItem.appendChild(identifiant)
     
             // Ajouter l'élément à la grille
             pokemonGrid.appendChild(pokemonGridItem);
+
+             balise2.appendChild(pokemonGrid);  // Ajouter la grille à la balise2
+            
+
+        
+          identifiant.addEventListener("click", async () => {
+            let reponse3 = await fetch(`https://tyradex.vercel.app/api/v1/pokemon/${recuperation2.pokemons[i].pokedex_id}`)
+            const recuperation3 = await reponse3.json() 
+            console.log(recuperation3.name.fr)
+         balise2.textContent=""
+         // const balise3 = document.getElementById('DetailsConteneur')
+         // details.textContent += `${recuperation3.name.fr}`
+        // details.textContent += `${recuperation3.pokemons[i].sprites.regular}`
+        
+        let details = document.getElementById("details")
+        details.innerHTML += `  
+        <section  >
+            <p class="Nom">${recuperation3.name.fr}</p>
+            <img class="image" src ="${recuperation3.sprites.regular}"/>
+            </section>` 
+
+            balise2.appendChild(details)
+            for(let i = 0; i<recuperation3.length; i++){
+                let details2 = document.getElementById("details2")
+                
+            }
+      })
           }
-    
-          // Ajouter la grille à la balise2
-          balise2.appendChild(pokemonGrid);
-        })
-      }
+
+        }) 
+       
     }
+}
     recupApi()
 
+   /* document.getElementById('getMessage').onclick = function() {
+        // Effectuer une requête fetch
+    
+        fetch("https://tyradex.vercel.app/api/v1/pokemon")
+          .then(responseX => responseX.json())
+          .then(dataX => {
+            // Sélectionner un message spécifique
+            // const donnee = dataX[0].text; // Première citation
+           console.log(dataX[0].pokedex_id)
+            
+            // Afficher le message dans l'élément avec l'ID 'message'
+           //  document.getElementById('type-container').innerHTML = donnee;
+          })
+          .catch(error => console.error('Erreur lors de la requête :', error));
+      };*/
+    
