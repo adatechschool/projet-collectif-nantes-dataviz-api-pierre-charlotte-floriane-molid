@@ -5,17 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>PokeWorld</title>
-
-
     <!--<script src="script.js"></script> --> 
-   
-     
-
     <link rel="stylesheet" href="style.css">
     <title>PokeWorld</title>
-
-
-  </head>
+    </head>
 
   <body>
     <div class="structure">
@@ -34,22 +27,14 @@
 
       <main>  
 <fieldset>
-  <select class ="listing" id="referrer" name="referrer">
-    <option value=""></option>
-    <option value="1"></option>
-    <option value="2"></option>
-    <option value="3"></option>
-    <option value="4">Other</option>
-  </select>
   <div class="search-container">
-    <input type="text" id="search-bar" placeholder="Rechercher..." />
-    <button id="search-button">🔍</button>
+    <select id="pokemon-dropdown">
+      <option value="">-- Sélectionnez un Pokémon 🔍 --</option>
+    </select>
   </div>
-  <p id="output-text"><span id="live-output"></span></p>
- 
 </fieldset>
 
-
+<div id=type-liste-container></div>
 <div id=listingPokemon></div>
 
 <div id="DetailsConteneur"></div>
