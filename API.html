@@ -13,14 +13,28 @@
 
     <div class="structure">
       <header>
-        <img id="titre" src="https://fontmeme.com/permalink/241202/b024750a90e0e12d27400ebb806da480.png" alt="effet-dombre" border="0">
+        <img id="titre"
+          src="https://fontmeme.com/permalink/241202/b024750a90e0e12d27400ebb806da480.png"
+          alt="effet-dombre" border="0">
         <div id="containerAnimation"></div>
       </header>
 
       <main>
+
+        <fieldset>
+          <select id="pokemon-dropdown">
+            <option value>-- Sélectionnez un Pokémon 🔍 --</option>
+          </select>
+
+        </fieldset>
+
+        <div id="details"></div>
+        <div id="image"></div>
+
         <div class="container">
           <div class="pokeball pokeball-animated"></div>
         </div>
+
         <div id="listingPokemon"></div>
         <div id="type-liste-container"></div>
       </main>

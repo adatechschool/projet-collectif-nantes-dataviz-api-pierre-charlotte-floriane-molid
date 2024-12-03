@@ -1,30 +1,40 @@
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
-    font-family: 'Roboto', sans-serif; /* Remplacez par la police de votre choix */
-    background-color: #F0F8FF; /* Bleu clair */
+    font-family: 'Roboto', sans-serif;
+    /* Remplacez par la police de votre choix */
+    background-color: #F0F8FF;
+    /* Bleu clair */
     background-image: url('assets/nuages.jpg');
     background-size: cover;
-    background-repeat: repeat-x; /* Répète l'image horizontalement */
+    background-repeat: repeat-x;
+    /* Répète l'image horizontalement */
     background-position: center;
-    background-attachment: fixed; /* Fixe l'image pour qu'elle ne bouge pas */
+    background-attachment: fixed;
+    /* Fixe l'image pour qu'elle ne bouge pas */
 }
 
 .background-image {
-    position: fixed; /* Permet à l'image de rester en arrière-plan */
+    position: fixed;
+    /* Permet à l'image de rester en arrière-plan */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* S'assure que l'image couvre toute la surface sans déformation */
-    z-index: -1; /* Place l'image derrière les autres éléments */
+    object-fit: cover;
+    /* S'assure que l'image couvre toute la surface sans déformation */
+    z-index: -1;
+    /* Place l'image derrière les autres éléments */
 }
 
 #titre {
     display: flex;
-    justify-content: center; /* Centre horizontalement */
+    justify-content: center;
+    /* Centre horizontalement */
     align-items: center;
-    font-size: 18rem; /* Ajuste la taille de la police */
+    font-size: 18rem;
+    /* Ajuste la taille de la police */
     margin: 0 auto;
     margin-top: 70px;
     transition: color 0.3s ease, transform 0.3s ease;
@@ -38,11 +48,16 @@ html, body {
 .placement {
     margin-top: 30px;
     display: flex;
-    flex-direction: column; /* Aligne les enfants verticalement */
-    align-items: center; /* Centre horizontalement les enfants */
-    justify-content: center; /* Centre verticalement les enfants */
-    gap: 20px; /* Espace entre les éléments */
-    text-align: center; /* Centre le texte */
+    flex-direction: column;
+    /* Aligne les enfants verticalement */
+    align-items: center;
+    /* Centre horizontalement les enfants */
+    justify-content: center;
+    /* Centre verticalement les enfants */
+    gap: 20px;
+    /* Espace entre les éléments */
+    text-align: center;
+    /* Centre le texte */
 }
 
 p {
@@ -50,8 +65,10 @@ p {
     font-size: 20px;
 
 }
-.nomPokemon{
-    background-color: #2d92bd; /* Bleu clair */
+
+.nomPokemon {
+    background-color: #2d92bd;
+    /* Bleu clair */
     color: white;
     border-radius: 100px;
     padding-left: 20px;
@@ -62,7 +79,8 @@ p {
 }
 
 h3 {
-    background-color: #2d92bd; /* Bleu clair */
+    background-color: #2d92bd;
+    /* Bleu clair */
     color: white;
     border-radius: 100px;
     padding-left: 20px;
@@ -72,13 +90,14 @@ h3 {
 
 
 
-.sprites{
+.sprites {
     background-color: #f3f3f3;
     border-radius: 15px;
     padding: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.types{
+
+.types {
     border-radius: 100px;
     padding-left: 20px;
     padding-right: 20px;
@@ -86,10 +105,11 @@ h3 {
     width: 175px;
     font-size: 1cm;
     color: white;
-    
+
 
 }
-.talents{
+
+.talents {
     border-radius: 100px;
     padding-left: 20px;
     padding-right: 20px;
@@ -98,6 +118,7 @@ h3 {
     color: white;
     background-color: rgba(168, 162, 147, 0.849);
 }
+
 aside {
     float: left;
     height: 100%;
@@ -105,7 +126,7 @@ aside {
 
 }
 
-img{
+img {
     height: 300px;
     width: 300px;
 }
@@ -136,9 +157,12 @@ img{
 
 .structure>main {
     grid-area: main;
-    align-items: center; /* Centre horizontalement */
-    justify-content: flex-start; /* Positionne en haut */
-    height: auto; /* Permet à la taille de s'adapter */    
+    align-items: center;
+    /* Centre horizontalement */
+    justify-content: flex-start;
+    /* Positionne en haut */
+    height: auto;
+    /* Permet à la taille de s'adapter */
     margin-top: -200px;
 }
 
@@ -154,10 +178,11 @@ img{
     /* Espace entre les boutons */
     padding: 50px;
     /* Optionnel, pour ajouter un espace autour du conteneur */
-   
-    /* -webkit-text-stroke: 0.5px white; /* Contour noir de 2 pixels */       
-    color : white;
-    font-weight: bold; /* Met le texte en gras */
+
+    /* -webkit-text-stroke: 0.5px white; /* Contour noir de 2 pixels */
+    color: white;
+    font-weight: bold;
+    /* Met le texte en gras */
 
     padding: 5px 55px;
     /* Espacement intérieur */
@@ -172,7 +197,7 @@ img{
     transition: background-color 0.3s ease;
     /* Effet de transition */
     margin: 15px;
-    
+
 }
 
 #Acier {
@@ -345,8 +370,8 @@ img{
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
-    
-    
+
+
 }
 
 .pokemon-grid-item {
@@ -359,7 +384,7 @@ img{
     padding: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
+
 }
 
 .pokemon-grid-item:hover {
@@ -372,7 +397,7 @@ img{
     text-align: center;
     color: white;
     font-size: 18px;
-    
+
 }
 
 
@@ -385,17 +410,51 @@ img{
     object-fit: contain;
 }
 
-.pokeball-animated{
+.pokeball-animated {
 
-    position: absolute; /* Permet de déplacer librement */
-    top: 200px; /* Ajuste verticalement */
-    left: -5%; /* Centre initialement horizontalement */
-    transform: translate(-50%, -50%); /* Centre par rapport au conteneur */
+    position: absolute;
+    /* Permet de déplacer librement */
+    top: 200px;
+    /* Ajuste verticalement */
+    left: -5%;
+    /* Centre initialement horizontalement */
+    transform: translate(-50%, -50%);
+    /* Centre par rapport au conteneur */
     width: 100px;
     height: 100px;
     background: url('assets/pokeball.png') no-repeat center;
     background-size: contain;
-    animation: movePokeball 3s infinite ease-in-out; /* Déplacement infini */
-    z-index: 10; /* Assure que la Pokéball est visible au-dessus */
+    animation: movePokeball 3s infinite ease-in-out;
+    /* Déplacement infini */
+    z-index: 10;
+    /* Assure que la Pokéball est visible au-dessus */
 
+}
+
+.Prev-Button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.Next-Button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color:white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
 }
