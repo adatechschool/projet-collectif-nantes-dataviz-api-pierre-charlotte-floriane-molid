@@ -34,16 +34,69 @@ html, body {
     /* Agrandit légèrement le texte au survol */
 }
 
+.placement {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column; /* Aligne les enfants verticalement */
+    align-items: center; /* Centre horizontalement les enfants */
+    justify-content: center; /* Centre verticalement les enfants */
+    gap: 20px; /* Espace entre les éléments */
+    height: 100vh; /* Hauteur égale à la fenêtre */
+    text-align: center; /* Centre le texte */
+}
+
 p {
     color: black;
     font-size: 20px;
+
+}
+.nomPokemon{
+    background-color: rgb(10, 10, 10);
+    color: white;
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
+h3{
+    background-color: rgb(10, 10, 10);
+    color: white;
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.sprites{
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.types{
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    font-size: 1cm;
+    border:solid black 2px;
+
+}
+.talents{
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: gray;
+}
 aside {
     float: left;
     height: 100%;
     /* border-top: solid; */
 
+}
+
+img{
+    height: 300px;
+    width: 300px;
 }
 
 
