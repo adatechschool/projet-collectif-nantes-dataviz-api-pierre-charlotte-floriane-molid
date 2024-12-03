@@ -3,8 +3,6 @@ html,body,main {
 }
 
 
-
-
 h1 {
     text-align: center;
     color: #FFCC00;
@@ -25,13 +23,12 @@ h1:hover {
 }
 
 .placement {
-    margin-top: 150px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column; /* Aligne les enfants verticalement */
     align-items: center; /* Centre horizontalement les enfants */
     justify-content: center; /* Centre verticalement les enfants */
     gap: 20px; /* Espace entre les éléments */
-    height: 100vh; /* Hauteur égale à la fenêtre */
     text-align: center; /* Centre le texte */
 }
 
@@ -78,6 +75,35 @@ h3{
     color: white;
     background-color: gray;
 }
+
+.Prev-Button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.Next-Button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color:white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 aside {
     float: left;
     border-top: solid;
