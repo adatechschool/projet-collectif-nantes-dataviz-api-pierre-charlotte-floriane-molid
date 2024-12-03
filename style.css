@@ -278,6 +278,7 @@ aside {
     gap: 20px;
     padding: 20px;
     
+    
 }
 
 .pokemon-grid-item {
@@ -311,7 +312,17 @@ aside {
     object-fit: contain;
 }
 
-.container{
-margin-bottom: 500px;
+.pokeball-animated{
+
+    position: absolute; /* Permet de déplacer librement */
+    top: 200px; /* Ajuste verticalement */
+    left: -5%; /* Centre initialement horizontalement */
+    transform: translate(-50%, -50%); /* Centre par rapport au conteneur */
+    width: 100px;
+    height: 100px;
+    background: url('assets/pokeball.png') no-repeat center;
+    background-size: contain;
+    animation: movePokeball 3s infinite ease-in-out; /* Déplacement infini */
+    z-index: 10; /* Assure que la Pokéball est visible au-dessus */
 
 }
