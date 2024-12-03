@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
     margin: 0;
+    font-family: 'Roboto', sans-serif; /* Remplacez par la police de votre choix */
     background-color: #F0F8FF; /* Bleu clair */
     background-image: url('assets/nuages.jpg');
     background-size: cover;
@@ -35,13 +36,12 @@ html, body {
 }
 
 .placement {
-    margin-top: 150px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column; /* Aligne les enfants verticalement */
     align-items: center; /* Centre horizontalement les enfants */
     justify-content: center; /* Centre verticalement les enfants */
     gap: 20px; /* Espace entre les éléments */
-    height: 100vh; /* Hauteur égale à la fenêtre */
     text-align: center; /* Centre le texte */
 }
 
@@ -51,20 +51,27 @@ p {
 
 }
 .nomPokemon{
-    background-color: rgb(10, 10, 10);
+    background-color: #2d92bd; /* Bleu clair */
     color: white;
-    border-radius: 25px;
+    border-radius: 100px;
     padding-left: 20px;
     padding-right: 20px;
+    padding: 5px 55px;
+    font-size: 1cm;
+
 }
 
-h3{
-    background-color: rgb(10, 10, 10);
+h3 {
+    background-color: #2d92bd; /* Bleu clair */
     color: white;
-    border-radius: 25px;
+    border-radius: 100px;
     padding-left: 20px;
     padding-right: 20px;
+    width: 100px;
 }
+
+
+
 .sprites{
     background-color: #f3f3f3;
     border-radius: 15px;
@@ -72,20 +79,24 @@ h3{
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 .types{
-    border-radius: 25px;
+    border-radius: 100px;
     padding-left: 20px;
     padding-right: 20px;
-    color: white;
+    padding: 5px 55px;
+    width: 175px;
     font-size: 1cm;
-    border:solid black 2px;
+    color: white;
+    
 
 }
 .talents{
-    border-radius: 25px;
+    border-radius: 100px;
     padding-left: 20px;
     padding-right: 20px;
+    padding: 5px 55px;
+    width: 175px;
     color: white;
-    background-color: gray;
+    background-color: rgba(168, 162, 147, 0.849);
 }
 aside {
     float: left;
@@ -143,7 +154,11 @@ img{
     /* Espace entre les boutons */
     padding: 50px;
     /* Optionnel, pour ajouter un espace autour du conteneur */
-    color: black;
+   
+    /* -webkit-text-stroke: 0.5px white; /* Contour noir de 2 pixels */       
+    color : white;
+    font-weight: bold; /* Met le texte en gras */
+
     padding: 5px 55px;
     /* Espacement intérieur */
     border: none;
@@ -157,13 +172,13 @@ img{
     transition: background-color 0.3s ease;
     /* Effet de transition */
     margin: 15px;
+    
 }
 
 #Acier {
     background-color: #B8B8D0;
     /* Beige/gris clair */
 }
-
 
 #Acier:hover {
     background-color: #9C9CB0;
@@ -355,9 +370,14 @@ img{
 .pokemon-grid-item h3 {
     margin-bottom: 10px;
     text-align: center;
-    color: #003A70;
+    color: white;
     font-size: 18px;
+    
 }
+
+
+
+
 
 .pokemon-grid-item img {
     max-width: 150px;
