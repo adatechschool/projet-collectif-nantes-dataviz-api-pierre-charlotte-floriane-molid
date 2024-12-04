@@ -24,7 +24,7 @@ async function recupApi() {
       balise2.innerHTML = "" // on vide
 
       // Créer un conteneur grid pour les Pokémon
-      const pokemonGrid = document.createElement('div');
+      const pokemonGrid = document.createElement('div');..
       pokemonGrid.classList.add('pokemon-grid');
 
       for (let i = 0; i < recuperation2.pokemons.length; i++) {
@@ -209,7 +209,7 @@ async function LoadApi() {
     .then((response) => response.json())
     .then((data) => {
       dropdown.innerHTML =
-        '<option value="">-- Sélectionnez un Pokémon --</option>'; // Réinitialiser le
+        '<option value=""> Recherche 🔍 </option>'; // Réinitialiser le
       data.forEach((pokemon) => {
         // Boucle forEach pour parcourir le tableau data et extraire les noms de Pokemons et creation d'une liste deroulante
         const option = document.createElement("option");

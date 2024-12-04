@@ -28,17 +28,16 @@ body {
     /* Place l'image derrière les autres éléments */
 }
 
-#titre {
+ #titre {
     display: flex;
     justify-content: center;
-    /* Centre horizontalement */
     align-items: center;
-    font-size: 18rem;
-    /* Ajuste la taille de la police */
-    margin: 0 auto;
-    margin-top: 70px;
+    height: 140px;
+    width: 450px;
+    margin-left: 42%;
+    margin-top: 40px;
     transition: color 0.3s ease, transform 0.3s ease;
-}
+}  
 
 #titre:hover {
     transform: scale(1.1);
@@ -67,14 +66,16 @@ p {
 }
 
 .nomPokemon {
-    background-color: #2d92bd;
+    /* background-color: #2d92bd; */
     /* Bleu clair */
     color: white;
-    border-radius: 100px;
+    font-size: 4rem;
+    text-decoration: underline;
+    /* border-radius: 100px;
     padding-left: 20px;
     padding-right: 20px;
     padding: 5px 55px;
-    font-size: 1cm;
+    font-size: 1cm; */
 
 }
 
@@ -85,9 +86,23 @@ h3 {
     border-radius: 100px;
     padding-left: 20px;
     padding-right: 20px;
-    width: 100px;
+    padding: 5px 5px;
+    width: 175px;
+    margin: auto;
+      
 }
 
+
+.talents {
+    border-radius: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding: 5px 55px;
+    width: 175px;
+    color: white;
+    background-color: rgba(168, 162, 147, 0.849);
+
+}
 
 
 .sprites {
@@ -109,15 +124,7 @@ h3 {
 
 }
 
-.talents {
-    border-radius: 100px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding: 5px 55px;
-    width: 175px;
-    color: white;
-    background-color: rgba(168, 162, 147, 0.849);
-}
+
 
 aside {
     float: left;
@@ -201,12 +208,12 @@ img {
 }
 
 #Acier {
-    background-color: #B8B8D0;
+    background-color: #a2a2bc;
     /* Beige/gris clair */
 }
 
 #Acier:hover {
-    background-color: #9C9CB0;
+    background-color: #848496;
 }
 
 #Combat {
@@ -256,16 +263,17 @@ img {
     background-color: #F08030;
 }
 
+
 #Feu:hover {
     background-color: #C06724;
 }
 
 #Glace {
-    background-color: #98D8D8;
+    background-color: #7eb8b8;
 }
 
 #Glace:hover {
-    background-color: #7AB0B0;
+    background-color: #6e9e9e;
 }
 
 #Insecte {
@@ -403,7 +411,6 @@ img {
 
 
 
-
 .pokemon-grid-item img {
     max-width: 150px;
     max-height: 150px;
@@ -416,7 +423,7 @@ img {
     /* Permet de déplacer librement */
     top: 200px;
     /* Ajuste verticalement */
-    left: -5%;
+    left: 0%;
     /* Centre initialement horizontalement */
     transform: translate(-50%, -50%);
     /* Centre par rapport au conteneur */
@@ -424,37 +431,66 @@ img {
     height: 100px;
     background: url('assets/pokeball.png') no-repeat center;
     background-size: contain;
-    animation: movePokeball 3s infinite ease-in-out;
+    animation: movePokeball 4s infinite ease-in-out;
     /* Déplacement infini */
     z-index: 10;
     /* Assure que la Pokéball est visible au-dessus */
 
 }
 
-.Prev-Button {
+.Next-Button {
     position: absolute;
     top: 0;
     left: 0;
-    margin: 10px;
+    margin: 950px;
     padding: 10px 20px;
-    background-color: black;
+    background-color: rgb(48, 44, 44);
     color: white;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
+    opacity: 0.6;
 }
 
-.Next-Button {
+.Prev-Button {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 10px;
+    margin: 950px;    
     padding: 10px 20px;
-    background-color: black;
+    background-color: rgb(48, 44, 44);
     color:white;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
+    opacity: 0.6;
+    
 }
+
+/* Style principal pour un <select> avec ID pokemon-dropdown */
+#pokemon-dropdown {
+    width: 100%; /* Adapte à la largeur disponible */
+    max-width: 400px; /* Largeur maximale */
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc; /* Bordure par défaut */
+    border-radius: 25px; /* Bords arrondis */
+    outline: none;
+    transition: all 0.3s ease-in-out; /* Transition fluide */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+    appearance: none; /* Supprime le style par défaut du navigateur */
+    background: url('chevron-icon.png') no-repeat right 10px center; /* Personnalise le chevron */
+    background-color: white; /* Fond blanc */
+    background-size: 15px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  /* Style au focus */
+  #pokemon-dropdown:focus {
+    border-color: #0078d4; /* Couleur de surbrillance */
+    box-shadow: 0 4px 10px rgba(0, 120, 212, 0.3); /* Ombre renforcée */
+  }
+  
