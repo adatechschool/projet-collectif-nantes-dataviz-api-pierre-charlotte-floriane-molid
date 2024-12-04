@@ -1,5 +1,6 @@
 let currentPokemonList = [];
 
+
 async function recupApi() {
   const reponse = await fetch("https://tyradex.vercel.app/api/v1/types");
   const recuperation = await reponse.json();
@@ -19,12 +20,15 @@ async function recupApi() {
       const reponse2 = await fetch(`https://tyradex.vercel.app/api/v1/types/${recuperation[i].name.en}`)
       const recuperation2 = await reponse2.json()
       animations.style.display = 'none'
-
+      
+      // Met à jour la liste globale avec les Pokémon du type sélectionné
+      currentPokemonList = recuperation2.pokemons; 
+      
       const balise2 = document.getElementById('type-liste-container')
       balise2.innerHTML = "" // on vide
 
       // Créer un conteneur grid pour les Pokémon
-      const pokemonGrid = document.createElement('div');..
+      const pokemonGrid = document.createElement('div');
       pokemonGrid.classList.add('pokemon-grid');
 
       for (let i = 0; i < recuperation2.pokemons.length; i++) {
@@ -156,6 +160,7 @@ async function afficherDetailsPokemon(pokemonId) {
     navContainer.style.justifyContent = 'space-between'; // Place les boutons aux extrémités
     navContainer.style.marginBottom = '10px'; // Espace sous les boutons
 
+    
     const Suivant = document.createElement('button')
     Suivant.classList.add('Next-Button')
     Suivant.innerText = "Suivant"
@@ -163,10 +168,13 @@ async function afficherDetailsPokemon(pokemonId) {
     Suivant.addEventListener('click', () => {
       //permet de vérifier si dans l'id du pokedex_id est égale a celui de pokemponId
       const currentIndex = currentPokemonList.findIndex(p => p.pokedex_id === pokemonId);
+      console.log(currentIndex)
+      console.log(currentPokemonList.findIndex(p => p.pokedex_id === pokemonId))
       //Vérifie que le pokémon existe dans la liste et que ce n'est pas le dernier élément du tableau.
       if (currentIndex !== -1 && currentIndex < currentPokemonList.length - 1) {
         const nextPokemonId = currentPokemonList[currentIndex + 1].pokedex_id;
         afficherDetailsPokemon(nextPokemonId); // Passe au Pokémon suivant
+        console.log(nextPokemonId)
       } else {
         alert("Il n'y a pas de Pokémon suivant.");
       }
@@ -180,12 +188,13 @@ async function afficherDetailsPokemon(pokemonId) {
       const currentIndex = currentPokemonList.findIndex(p => p.pokedex_id === pokemonId);
       //Si l'index est supérieur a 0 on retourne au pokémon précedent, si jamais ce n'est pas le cas il y a une alerte.
       if (currentIndex > 0) {
-        const nextPokemonId = currentPokemonList[currentIndex - 1].pokedex_id;
-        afficherDetailsPokemon(nextPokemonId); // Passe au Pokémon précédent
+        const prevPokemonId = currentPokemonList[currentIndex - 1].pokedex_id;
+        afficherDetailsPokemon(prevPokemonId); // Passe au Pokémon précédent
+        console.log(prevPokemonId)
       } else {
         alert("Il n'y a pas de Pokémon précédent.");
       }
-    });
+    }); 
 
 
     placement.appendChild(talentsContainer);
@@ -195,83 +204,46 @@ async function afficherDetailsPokemon(pokemonId) {
   } catch (erreur) {
     console.error('Erreur lors de la récupération des détails du Pokémon:', erreur);
   }
+  
 }
-recupApi()
+recupApi(LoadApi())
+
 
 const searchBar = document.getElementById("search-bar"); // Création d'une variable SearchBar et on relie au DOM (barre de recherche)
 const searchButton = document.getElementById("search-button"); // Création d'une variable searchButton et on relie au DOM (button de recherche)
 const dropdown = document.getElementById("pokemon-dropdown"); // Ajouter une fonctionnalité pour la liste déroulante
 const balise2 = document.getElementById("type-liste-container");
 async function LoadApi() {
-  // A chaque chargement de la page, création d' une fonction asynchrone
-  // Effectuer une requête fetch
+  const animations = document.querySelector(".pokeball-animated")
+
+  
+  // Chargement de tous les Pokémon pour la liste déroulante
   fetch("https://tyradex.vercel.app/api/v1/pokemon")
     .then((response) => response.json())
     .then((data) => {
       dropdown.innerHTML =
-        '<option value=""> Recherche 🔍 </option>'; // Réinitialiser le
-      data.forEach((pokemon) => {
-        // Boucle forEach pour parcourir le tableau data et extraire les noms de Pokemons et creation d'une liste deroulante
-        const option = document.createElement("option");
+        '<option value="">-- Sélectionnez un Pokémon --</option>'; // Réinitialiser le contenu
 
-        option.value = pokemon.name.fr; // Valeur du Pokémon
-        option.textContent = pokemon.name.fr; // Texte affiché
+      // Ajout des options dans le dropdown
+      data.forEach((pokemon) => {
+        const option = document.createElement("option");
+        option.value = pokemon.pokedex_id; // Utiliser pokedex_id comme valeur
+        option.textContent = pokemon.name.fr; // Texte affiché dans la liste
         dropdown.appendChild(option);
       });
-      dropdown
-        .addEventListener("change", () => {    // Fonction callback qui rends dynamique le menu deroulant
-          let picture = document.getElementById("image"); // Création d'une variable "images" et on relie au DOM en passant par l'ID "image"
-          let NamePokemon = document.getElementById("details"); // Création d'une variable images et on relie au DOM en passant par l'ID "image"
-          NamePokemon.innerHTML = "";
-          picture.innerHTML = "";
 
-          data.forEach((pokemon) => {
-            // Boucle forEach pour parcourir le tableau data et extraire les noms de Pokemons et creation d'une liste deroulante
-            const option = document.createElement("option");
-
-
-            option.value = pokemon.name.fr; // Valeur du Pokémon
-            option.textContent = pokemon.name.fr; // Texte affiché
-            dropdown.appendChild(option);
-          });
-          for (let i = 0; i < data.length; i++) {
-            // Boucle fOR pour parcourir l'api et le tableau data
-            const selectedPokemon = dropdown.value;
-            // console.log(data[i].name.fr);
-            if (selectedPokemon != data[i].name.fr) {
-              // Condition qui permets de vérifier si le nom de pokemon qui a éte saisi existe dans l'API
-              // console.log("false")
-              // data[i].name.fr++;
-            } else {
-              console.log("true")
-              NamePokemon.innerHTML += data[i].name.fr; // Si le pokemon existe, on affiche le resultat de l'API
-              picture.innerHTML += `<img src="${data[i].sprites.regular}" alt="${data[i].sprites.regular}"/>`; // Si le pokemon existe, on affiche l'image de l'API
-            }
+      // Gestionnaire pour le changement dans le dropdown
+      dropdown.addEventListener("change", () => {
+        const selectedPokemonId = parseInt(dropdown.value, 10); // Récupérer l'ID sélectionné
+        if (selectedPokemonId) {
+          console.log('On tente de récupérer le button...')
+          animations.style.display="none"
+          afficherDetailsPokemon(selectedPokemonId); // Appeler la fonction avec l'ID
           }
-        })
-        .catch((error) => {
-          console.error("Erreur lors de la requête API :", error);
-          NamePokemon.innerHTML += `<p>Erreur lors de la recherche. Veuillez réessayer plus tard.</p>`;
-        });
+      });
+    })
+    .catch((error) => {
+      console.error("Erreur lors de la requête API :", error);
     });
-  // Mise à jour de la barre de recherche lors de la sélection dans la liste déroulante
-  dropdown.addEventListener("change", () => {
-    searchBar.value = dropdown.value;
-
-    // Déclencher la recherche pour afficher les détails du Pokémon sélectionné
-    fetch("https://tyradex.vercel.app/api/v1/pokemon")
-      .then((response) => response.json())
-      .then((data) => {
-        const selectedPokemon = data.find(
-          (pokemon) => pokemon.name.fr === dropdown.value
-        );
-        if (selectedPokemon) {
-          NamePokemon.innerHTML += data[i].name.fr; // Si le pokemon existe, on affiche le resultat de l'API
-          picture.innerHTML += `<img src="${data[i].sprites.regular}" alt="${data[i].sprites.regular}"/>`; // Si le pokemon existe, on affiche l'image de l'API
-
-        }
-      }
-      )
-  });
 }
 LoadApi();
