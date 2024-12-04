@@ -222,7 +222,7 @@ async function LoadApi() {
     .then((response) => response.json())
     .then((data) => {
       dropdown.innerHTML =
-        '<option value="">-- Sélectionnez un Pokémon --</option>'; // Réinitialiser le contenu
+        '<option value=""> Recherche 🔍</option>'; // Réinitialiser le contenu
 
       // Ajout des options dans le dropdown
       data.forEach((pokemon) => {

@@ -441,7 +441,7 @@ img {
 .Next-Button {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 250px;
     margin: 950px;
     padding: 10px 20px;
     background-color: rgb(48, 44, 44);
@@ -456,7 +456,7 @@ img {
 .Prev-Button {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 250px;
     margin: 950px;    
     padding: 10px 20px;
     background-color: rgb(48, 44, 44);
